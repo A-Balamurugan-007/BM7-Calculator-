@@ -1,0 +1,155 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Calculator</title>
+  </head>
+  <body>
+    <h1>CALCULATOR </h1>
+     <div class="container">
+      <div class="Calculator">
+       <input type="text" placeholder="" id="output-screen">
+       <button onclick="Clear() ">CLR</button>
+       <button onclick="Delete()">DEL</button>
+       <button onclick="display('%')">%</button>
+       <button onclick="display('/')" >/</button>
+       <button onclick="display('7')">7</button>
+       <button onclick="display('8')">8</button>
+       <button onclick="display('9')">9</button>
+       <button onclick="display('-')">-</button>
+       <button onclick="display('4')">4</button>
+       <button onclick="display('5')">5</button>
+       <button onclick="display('6')">6</button>
+       <button onclick="display('*')">*</button>
+       <button onclick="display('1')">1</button>
+       <button onclick="display('2')">2</button>
+       <button onclick="display('3')">3</button>
+       <button onclick="display('+')">+</button>
+       <button onclick="display('.')">.</button>
+       <button onclick="display('0')">0</button>
+       <button onclick="Calculate()"class="equal">=</button>
+      </div>
+   </div>
+  </body>
+  <style>
+  H1{
+    text-align: center ;
+    color:white ;
+    animation: glow 2s infinite ;
+    
+}
+ @keyframes glow{
+   0%{
+     background-color: red ;
+   }
+   5%{
+     background-color: orange ;
+   }
+   25%{
+     background-color: green ;
+   }
+   50%{
+     background-color: yellow ;
+   }
+   75%{
+     background-color: pink ;
+   }
+   100%{
+     background-color:gold ;
+   }
+ }
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  background-color: wheat ;
+  font-family: Sans-Serif;
+  outline: none ;
+  
+ }
+.container{
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Calculator{
+  background-color: lavender ;
+  padding:15px ;
+  border-radius: 30px;
+  box-shadow:inset 5px 5px 12px #ffffff,
+             5px 5px 12px rgba(0,0,0,.16);
+  display:grid;
+  Grid-template-columns:repeat(4,50px);
+  }
+  input{
+    grid-column: span 4;
+    height: 50px ;
+    width: 200px ;
+    background-color: #ecf0f3;
+    box-shadow:inset -5px -5px 12px #ffffff,          inset 5px 5px 12px rgba(0,0,0,.16 );
+    border:none;
+    border-radius:30px ;
+    color: rgb(70,70,70);
+    font-size: 40px;
+    text-align: end;
+    margin: auto ;
+    margin-top: 20px;
+    margin-bottom:20px ;
+    padding: 20px;
+  }
+  Button{
+    height: 40px;
+    width: 40px;
+    background-color: #ecf0f3;
+    box-shadow: -5px -5px 12px #ffffff, 
+              5px 5px 12px rgba(0,0,0,.16 );
+    border: none ;
+    border-radius: 50%;
+    margin: 8px ;
+    font-size: 16px ;
+  }
+ .equal{
+   width: 100px;
+   border-radius: 40px;
+   background-color: #ecf0f3;
+    box-shadow: -5px -5px 12px #ffffff, 
+              5px 5px 12px rgba(0,0,0,.16 );
+   
+ }
+ 
+    
+    
+  </style>
+  
+  
+  <script>
+  alert('Welcome🙏')
+  var name=prompt('what is your name 🙂', '')
+  alert('Hi😊 ' +name+ ' Welcome to Digital Calculator 🙋‍♂️')
+    let outputScreen= document.getElementById("output-screen");
+    function display(num){
+      outputScreen.value += num;
+    }
+    function Calculate(){
+      try{
+     outputScreen.value=eval(outputScreen.value);
+      }
+      catch(err){
+        alert("Invalid")
+      } 
+    }
+    function Clear(){
+     outputScreen.value="";
+    } 
+    function Delete(){
+    outputScreen.value=outputScreen.value.slice(0,-1);
+    }
+    var name='I try to love coding 😀✌️'
+    console.log(name)
+  </script>
+  
+</html>
